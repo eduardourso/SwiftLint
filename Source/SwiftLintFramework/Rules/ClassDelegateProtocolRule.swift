@@ -75,7 +75,8 @@ public struct ClassDelegateProtocolRule: ASTRule, ConfigurationProviderRule {
             case let contents = file.contents.bridge(),
             case let start = nameOffset + nameLength,
             let range = contents.byteRangeToNSRange(start: start, length: bodyOffset - start),
-            !isClassProtocol(file: file, range: range) else {
+            isClassProtocol(file: file, range: range)
+            else {
             return []
         }
 
