@@ -87,7 +87,7 @@ public struct ClassDelegateProtocolRule: ASTRule, ConfigurationProviderRule {
     }
 
     private func isClassProtocol(file: File, range: NSRange) -> Bool {
-        return !file.match(pattern: "\\bclass\\b", with: [.keyword], range: range).isEmpty
+        return !file.match(pattern: "\\b(class)\\b", with: [.keyword], range: range).isEmpty
     }
 
     private func isDelegateProtocol(_ name: String) -> Bool {
